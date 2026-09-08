@@ -6,16 +6,14 @@ export default function Template({ children }: { children: React.ReactNode }) {
   return (
     <motion.div
       initial={{
-        opacity: 0,
-        y: 40,
+        clipPath: "inset(0 100% 0 0)",
       }}
       animate={{
-        opacity: 1,
-        y: 0,
+        clipPath: "inset(0 0% 0 0)",
       }}
       transition={{
-        duration: 0.7,
-        ease: [0.22, 1, 0.36, 1],
+        duration: 1,
+        ease: [0.76, 0, 0.24, 1],
       }}
     >
       {children}

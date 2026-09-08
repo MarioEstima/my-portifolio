@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/src/lib/utils";
+import Link from "next/link";
 import { useState } from "react";
 
 interface HeaderProps {
@@ -15,18 +16,16 @@ export default function Header({ variant = "dark" }: HeaderProps) {
       className={cn(
         "absolute top-0 left-0 w-full px-6 md:px-8 py-6 z-20",
         variant === "dark" && "text-white",
-        variant === "light" && "text-black"
+        variant === "light" && "text-black",
       )}
     >
       <section className="flex justify-between items-start w-full">
-        {/* Nome visível no Desktop e Mobile */}
         <div>
-          <span className="font-medium text-xs text-[#FFFFFF]">
+          <Link href="/" className="font-medium text-sm text-[#FFFFFF]">
             Mario Estima
-          </span>
+          </Link>
         </div>
 
-        {/* Texto descritivo no PC */}
         <div className="hidden md:block max-w-xs text-right">
           <p className="font-thin text-xs text-[#FFFFFF] leading-relaxed">
             Passionate Creative Designer and Developer, dedicated to crafting
@@ -35,7 +34,6 @@ export default function Header({ variant = "dark" }: HeaderProps) {
           </p>
         </div>
 
-        {/* Menu Hambúrguer em escada garantido no Mobile */}
         <div className="block md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
