@@ -8,12 +8,11 @@ export default function SkillsCards({
   title,
   description,
   icons,
-  tags,
   className = "",
 }: SkillsCardsProps) {
   return (
     <div
-      className={`bg-[#1E1E1E]   rounded-4xl p-6 flex flex-col justify-between transition-all duration-300  ${className}`}
+      className={`bg-[#1E1E1E] rounded-4xl p-10 flex flex-col justify-between transition-all duration-300  ${className}`}
     >
       <div>
         {icons && icons.length > 0 && (
@@ -21,23 +20,10 @@ export default function SkillsCards({
             {icons.map((icon, index) => (
               <div
                 key={index}
-                className="w-20 h-20 rounded-full bg-[#1A1A1A] flex items-center justify-center text-white text-xl shadow-inner"
+                className="w-15 h-15 rounded-full bg-[#141414] flex items-center justify-center text-white text-xl shadow-inner"
               >
                 {icon}
               </div>
-            ))}
-          </div>
-        )}
-
-        {tags && tags.length > 0 && (
-          <div className="flex flex-wrap gap-2 mb-6">
-            {tags.map((tag, index) => (
-              <span
-                key={index}
-                className="px-3 py-1.5 rounded-lg bg-[#1A1A1A] border border-white/10 text-xs font-medium text-gray-300"
-              >
-                {tag}
-              </span>
             ))}
           </div>
         )}

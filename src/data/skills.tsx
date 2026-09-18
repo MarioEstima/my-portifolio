@@ -1,26 +1,22 @@
 import type { ReactNode } from "react";
 import { FaAws } from "react-icons/fa";
 import {
-  SiHtml5,
-  SiCss,
-  SiJavascript,
   SiTypescript,
   SiReact,
   SiNextdotjs,
   SiTailwindcss,
-  SiBootstrap,
-  SiPython,
-  SiCplusplus,
-  SiC,
   SiNodedotjs,
   SiExpress,
-  SiDjango,
   SiMongodb,
   SiPostgresql,
-  SiFigma,
   SiGit,
   SiGithub,
+  SiVercel,
   SiDocker,
+  SiNestjs,
+  SiFirebase,
+  SiStripe,
+  SiExpo,
 } from "react-icons/si";
 
 export interface SkillItem {
@@ -32,66 +28,102 @@ export interface SkillItem {
 
 export const skillsData: SkillItem[] = [
   {
-    title: "Programming Languages",
-    description:
-      "Proficient in problem-solving and applying programming logic.",
+    title: "Frontend Web",
+    description: "Building engaging and responsive web applications with modern frameworks, UI libraries, and animations.",
     icons: [
-      <SiPython key="py" className="text-[#3776AB]" />,
-      <SiC key="c" className="text-[#A8B9CC]" />,
-      <SiCplusplus key="cpp" className="text-[#00599C]" />,
-      <SiJavascript key="js" className="text-[#F7DF1E]" />,
-      <SiTypescript key="ts" className="text-[#3178C6]" />,
-    ],
-  },
-  {
-    title: "Front-End Development",
-    description:
-      "Building engaging and user-friendly web interfaces using modern frameworks.",
-    icons: [
-      <SiHtml5 key="html" className="text-[#E34F26]" />,
-      <SiCss key="css" className="text-[#1572B6]" />,
-      <SiJavascript key="js" className="text-[#F7DF1E]" />,
-      <SiTypescript key="ts" className="text-[#3178C6]" />,
       <SiReact key="react" className="text-[#61DAFB]" />,
       <SiNextdotjs key="next" className="text-white" />,
-    ],
-  },
-  {
-    title: "Styling & Design",
-    description: "Crafting visually appealing and responsive designs.",
-    icons: [
+      <SiTypescript key="ts" className="text-[#3178C6]" />,
       <SiTailwindcss key="tailwind" className="text-[#06B6D4]" />,
-      <SiBootstrap key="bootstrap" className="text-[#7952B3]" />,
-      <SiCss key="css" className="text-[#1572B6]" />,
+    ],
+    tags: [
+      "React.js",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Shadcn/ui",
+      "Responsive design",
+      "Framer Motion",
+      "REST APIs",
+      "PWA",
     ],
   },
   {
-    title: "Back-End Development",
-    description: "Developing robust server-side logic and APIs.",
+    title: "Frontend Mobile",
+    description: "Developing cross-platform mobile apps for Android and iOS with native navigation and features.",
+    icons: [
+      <SiReact key="react-native" className="text-[#61DAFB]" />,
+      <SiExpo key="expo" className="text-white" />,
+    ],
+    tags: [
+      "React Native",
+      "Expo / Expo Router",
+      "NativeWind",
+      "React Native Maps",
+      "Deep Linking",
+      "Notificações",
+    ],
+  },
+  {
+    title: "Backend Development",
+    description: "Developing robust server-side logic, scalable APIs, and real-time communication systems.",
     icons: [
       <SiNodedotjs key="node" className="text-[#339933]" />,
+      <SiNestjs key="nestjs" className="text-[#E0234E]" />,
       <SiExpress key="express" className="text-white" />,
-      <SiDjango key="django" className="text-[#092E20]" />,
-      <SiPython key="python" className="text-[#3776AB]" />,
+    ],
+    tags: [
+      "Node.js",
+      "NestJS",
+      "APIs REST",
+      "Autenticação/autorização",
+      "WebSockets / Socket.IO",
+      "Lógica de negócio",
     ],
   },
   {
-    title: "Database Management",
-    description: "Designing and managing databases.",
+    title: "Bases de Dados",
+    description: "Designing, modeling, and integrating relational and non-relational databases.",
     icons: [
-      <SiMongodb key="mongo" className="text-[#47A248]" />,
       <SiPostgresql key="postgres" className="text-[#4169E1]" />,
+      <SiMongodb key="mongo" className="text-[#47A248]" />,
     ],
+    tags: ["SQL", "NoSQL", "Modelagem de Dados", "Integração com Aplicação"],
   },
   {
-    title: "UI/UX Design & Tools",
-    description: "Designing user-centric interfaces.",
+    title: "Dev & Ferramentas",
+    description: "Managing version control, deployments, environment variables, and project architecture.",
     icons: [
-      <SiFigma key="figma" className="text-[#F24E1E]" />,
       <SiGit key="git" className="text-[#F05032]" />,
       <SiGithub key="github" className="text-white" />,
+      <SiVercel key="vercel" className="text-white" />,
       <SiDocker key="docker" className="text-[#2496ED]" />,
+    ],
+    tags: [
+      "Git / GitHub",
+      "Vercel",
+      "EAS / Expo",
+      "Deploy",
+      "Variáveis de Ambiente",
+      "Arquitetura de Projetos",
+      "MVVM",
+    ],
+  },
+  {
+    title: "Serviços & Outras Tecnologias",
+    description: "Integrating external APIs, payment gateways, real-time services, and AI capabilities.",
+    icons: [
+      <SiFirebase key="firebase" className="text-[#FFCA28]" />,
+      <SiStripe key="stripe" className="text-[#635BFF]" />,
       <FaAws key="aws" className="text-[#FF9900]" />,
+    ],
+    tags: [
+      "Firebase",
+      "Stripe",
+      "LiveKit",
+      "Socket.IO",
+      "Automação",
+      "Integração com IA",
     ],
   },
 ];

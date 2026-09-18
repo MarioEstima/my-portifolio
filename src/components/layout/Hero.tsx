@@ -3,7 +3,7 @@ import { MenuBar } from "../menuBar";
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-screen bg-[#7E7E7E] text-[#FFFFFF] overflow-hidden flex flex-col justify-between pt-20">
+    <section className="sticky top-0 w-full h-screen bg-[#7E7E7E] text-[#FFFFFF] overflow-hidden flex flex-col justify-between pt-10 z-0">
       <div className="absolute inset-0 flex items-end justify-center pointer-events-none z-0">
         <div className="relative flex items-end justify-center max-w-[1400px] w-full h-full">
           <div className="relative w-full h-full flex items-end justify-center overflow-hidden">
@@ -12,7 +12,7 @@ export default function Hero() {
               alt="Profile"
               width={800}
               height={1000}
-              className="object-contain h-[90vh] w-auto grayscale drop-shadow-2xl"
+              className="object-contain object-bottom h-[55vh] md:h-[90vh] w-auto grayscale drop-shadow-2xl"
               priority
               unoptimized
             />

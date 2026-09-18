@@ -5,20 +5,12 @@ import GetInTouch from "@/src/components/layout/GetInTouch";
 import { skillsData } from "@/src/data/skills";
 
 export default function SkillsPage() {
-  const programmingLanguages = skillsData[0];
-  const frontend = skillsData[1];
-  const styling = skillsData[2];
-  const backend = skillsData[3];
-  const database = skillsData[4];
-  const uiux = skillsData[5];
-
-  const computerScience = skillsData[6] || frontend;
-  const personal = skillsData[7] || backend;
-  const animations = skillsData[8] || styling;
-  const cloud = skillsData[9] || backend;
-  const testing = skillsData[10] || database;
-  const mobile = skillsData[11] || frontend;
-  const versionControl = skillsData[12] || uiux;
+  const frontendWeb = skillsData[0];
+  const frontendMobile = skillsData[1];
+  const backend = skillsData[2];
+  const database = skillsData[3];
+  const devTools = skillsData[4];
+  const services = skillsData[5];
 
   return (
     <PageLayout theme="dark">
@@ -48,37 +40,24 @@ export default function SkillsPage() {
               "
             >
               <div className="flex flex-col gap-4">
-                {frontend && <SkillsCards {...frontend} />}
+                {frontendMobile && <SkillsCards {...frontendMobile} />}
                 {backend && <SkillsCards {...backend} />}
-                {computerScience && <SkillsCards {...computerScience} />}
-                {personal && <SkillsCards {...personal} />}
               </div>
 
               <div className="flex flex-col gap-4">
-                {styling && <SkillsCards {...styling} />}
-                {animations && <SkillsCards {...animations} />}
-                {cloud && <SkillsCards {...cloud} />}
-                {testing && <SkillsCards {...testing} />}
-              </div>
-
-              <div className="flex flex-col gap-4">
-                {programmingLanguages && (
-                  <SkillsCards {...programmingLanguages} />
-                )}
                 {database && <SkillsCards {...database} />}
+                {devTools && <SkillsCards {...devTools} />}
+              </div>
 
-                <div className="grid grid-cols-2 gap-4">
-                  {mobile && <SkillsCards {...mobile} />}
-                  {versionControl && <SkillsCards {...versionControl} />}
-                </div>
-
-                {uiux && <SkillsCards {...uiux} />}
+              <div className="flex flex-col gap-4">
+                {frontendWeb && <SkillsCards {...frontendWeb} />}
+                {services && <SkillsCards {...services} />}
               </div>
             </div>
           </div>
         </section>
 
-        <GetInTouch />
+        <GetInTouch  variant="dark"/>
       </main>
     </PageLayout>
   );

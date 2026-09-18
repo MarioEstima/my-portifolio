@@ -12,7 +12,7 @@ interface PageLayoutProps {
 
 export default function PageLayout({
   children,
-  theme = "light",
+  theme = "dark",
   nextRoute = "/skills",
 }: PageLayoutProps) {
   return (
@@ -21,7 +21,7 @@ export default function PageLayout({
 
       {children}
 
-      <Footer nextRoute={nextRoute} />
+      <Footer theme={theme} nextRoute={nextRoute} />
     </PageContainer>
   );
 }

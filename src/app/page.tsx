@@ -14,11 +14,13 @@ export default function Home() {
 
         <Hero />
 
-        <About />
+        <div className="relative z-10 bg-white">
+          <About />
 
-        <WorkPreview />
+          <WorkPreview />
 
-        <GetInTouch />
+          <GetInTouch />
+        </div>
       </main>
     </PageLayout>
   );
