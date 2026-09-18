@@ -17,7 +17,7 @@ export default function SkillsPage() {
       <main className="w-full bg-black">
         <section className="w-full py-20 flex justify-center px-4">
           <div className="w-[1212px] text-center">
-            <h1 className="text-white text-[140px] font-normal whitespace-nowrap">
+            <h1 className="text-white text-[7.5vw] md:text-[225px] font-normal whitespace-nowrap">
               Skills that fuel my <br />
               passion
             </h1>
@@ -57,7 +57,7 @@ export default function SkillsPage() {
           </div>
         </section>
 
-        <GetInTouch  variant="dark"/>
+        <GetInTouch variant="dark" />
       </main>
     </PageLayout>
   );
