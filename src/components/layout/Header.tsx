@@ -115,12 +115,12 @@ export default function Header({ variant = "dark" }: HeaderProps) {
               {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
             </button>
 
-            {/* Hamburger (mobile only) */}
+            {/* Hamburger (all breakpoints) */}
             <button
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle Menu"
               aria-expanded={isOpen}
-              className="md:hidden flex flex-col gap-1.5 p-2 items-end justify-center cursor-pointer"
+              className="flex flex-col gap-1.5 p-2 items-end justify-center cursor-pointer"
             >
               {isOpen ? (
                 <X className="w-6 h-6 text-white" />
@@ -141,7 +141,7 @@ export default function Header({ variant = "dark" }: HeaderProps) {
         {isOpen && (
           <>
             <motion.div
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 md:hidden"
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -149,7 +149,7 @@ export default function Header({ variant = "dark" }: HeaderProps) {
               onClick={() => setIsOpen(false)}
             />
             <motion.aside
-              className="fixed top-0 right-0 h-full w-[78vw] max-w-xs bg-[#111111] text-white z-[60] md:hidden flex flex-col px-7 pt-24 pb-10 shadow-2xl"
+              className="fixed top-0 right-0 h-full w-[78vw] max-w-xs bg-[#111111] text-white z-[60] flex flex-col px-7 pt-24 pb-10 shadow-2xl"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
