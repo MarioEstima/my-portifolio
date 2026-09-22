@@ -1,0 +1,43 @@
+---
+title: "Building a modern portfolio with Next.js 16"
+excerpt: "How I built this portfolio using Next.js App Router, Tailwind CSS v4 and framer-motion — from animated hero to GitHub integration."
+date: "2026-09-18"
+tags: ["Next.js", "React", "Tailwind"]
+---
+
+# Building a modern portfolio with Next.js 16
+
+A portfolio is more than a list of projects — it's the first impression. Here's
+how I built this one.
+
+## The stack
+
+- **Next.js 16** with the App Router and Server Components
+- **Tailwind CSS v4** for styling
+- **framer-motion** for animations
+- **GitHub API** for live project data
+
+## Server Components + ISR
+
+Project data comes straight from the GitHub API, fetched on the server and
+revalidated hourly:
+
+```ts
+export async function getFeaturedRepos() {
+  const res = await fetch(
+    `https://api.github.com/users/MarioEstima/repos?per_page=100`,
+    { next: { revalidate: 3600 } }
+  );
+  return res.json();
+}
+```
+
+## Animations
+
+The hero uses `useScroll` + `useTransform` from framer-motion to create a
+parallax effect: the title drifts up while the image sinks as you scroll.
+
+## What's next
+
+Dark/light theme toggle with no-flash hydration, an MDX blog (this one!) and a
+contact form. Check the repo to follow along.

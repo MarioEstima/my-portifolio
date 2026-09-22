@@ -1,20 +1,26 @@
+"use client";
+
 import About from "../components/layout/About";
 import GetInTouch from "../components/layout/GetInTouch";
-import ContactInfo from "../components/layout/ContactInfo";
 import WorkPreview from "../components/layout/WorkPreview";
 import Hero from "../components/layout/Hero";
 import PageLayout from "../components/pages/PageLayout";
-import Header from "../components/layout/Header";
+import { useTheme } from "@/src/components/theme/ThemeProvider";
 
 export default function Home() {
-  return (
-    <PageLayout theme="light">
-      <main className="relative">
-        <Header />
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
 
+  return (
+    <PageLayout nextRoute="/projects">
+      <main className="relative">
         <Hero />
 
-        <div className="relative z-10 bg-white">
+        <div
+          className={`relative z-10 transition-colors duration-300 ${
+            isDark ? "bg-black text-white" : "bg-white text-black"
+          }`}
+        >
           <About />
 
           <WorkPreview />

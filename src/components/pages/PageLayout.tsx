@@ -1,27 +1,30 @@
+"use client";
+
 import { ReactNode } from "react";
 
 import { PageContainer } from "../layout/PageContainer";
 import Footer from "../layout/Footer";
 import Header from "../layout/Header";
+import { useTheme } from "@/src/components/theme/ThemeProvider";
 
 interface PageLayoutProps {
   children: ReactNode;
-  theme?: "dark" | "light";
   nextRoute?: string;
 }
 
 export default function PageLayout({
   children,
-  theme = "dark",
   nextRoute = "/skills",
 }: PageLayoutProps) {
+  const { theme } = useTheme();
+
   return (
-    <PageContainer variant={theme}>
+    <PageContainer>
       <Header variant={theme} />
 
       {children}
 
-      <Footer theme={theme} nextRoute={nextRoute} />
+      <Footer nextRoute={nextRoute} />
     </PageContainer>
   );
 }

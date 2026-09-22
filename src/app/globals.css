@@ -1,14 +1,28 @@
-
 @import "tailwindcss";
-
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
+html.light {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+html:not(.light) {
+  --background: #000000;
+  --foreground: #ffffff;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
 
 body {
   background: var(--background);
   color: var(--foreground);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }

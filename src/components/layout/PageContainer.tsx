@@ -1,31 +1,27 @@
+"use client";
+
 import { cn } from "@/src/lib/utils";
 import { ReactNode } from "react";
+import { useTheme } from "@/src/components/theme/ThemeProvider";
 
 interface PageContainerProps {
   children: ReactNode;
-  variant?: "dark" | "light";
   className?: string;
 }
 
-export function PageContainer({
-  children,
-  variant = "dark",
-  className,
-}: PageContainerProps) {
+export function PageContainer({ children, className }: PageContainerProps) {
+  const { theme } = useTheme();
+
   return (
-    <main
+    <div
       className={cn(
         "min-h-screen w-full",
         "transition-colors duration-300",
-
-        variant === "dark" && ["bg-black", "text-white"],
-
-        variant === "light" && ["bg-white", "text-black"],
-
+        theme === "dark" ? ["bg-black", "text-white"] : ["bg-white", "text-black"],
         className,
       )}
     >
       {children}
-    </main>
+    </div>
   );
 }

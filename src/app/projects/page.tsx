@@ -1,21 +1,22 @@
+import type { Metadata } from "next";
 import PageLayout from "@/src/components/pages/PageLayout";
+import { ProjectsContent } from "./ProjectsContent";
+import { getGitHubStats, getFeaturedRepos } from "@/src/lib/github";
+import { siteConfig } from "@/src/lib/site";
 
-export default function ProjectsPage() {
+export const metadata: Metadata = {
+  title: "Projects",
+  description: `Showcase projects and open-source repositories by ${siteConfig.name}.`,
+};
+
+export const revalidate = 3600;
+
+export default async function ProjectsPage() {
+  const [repos, stats] = await Promise.all([getFeaturedRepos(), getGitHubStats()]);
+
   return (
-    <PageLayout theme="light">
-
-      <main className="mx-auto max-w-7xl px-6 py-20">
-
-        <h1 className="text-5xl font-bold">
-          My Projects
-        </h1>
-
-        <p className="mt-6 text-black/60">
-          Alguns dos projetos que desenvolvi.
-        </p>
-
-      </main>
-
+    <PageLayout nextRoute="/skills">
+      <ProjectsContent repos={repos} stats={stats} />
     </PageLayout>
-  )
+  );
 }
